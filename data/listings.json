@@ -1,0 +1,97 @@
+[
+  {
+    "id": "sample-river-ranch-estate",
+    "sample": true,
+    "status": "Active",
+    "featured": true,
+    "address": "100 Sample Lane",
+    "neighborhood": "River Ranch",
+    "city": "Lafayette",
+    "state": "LA",
+    "zip": "70508",
+    "price": 1295000,
+    "beds": 5,
+    "baths": 4.5,
+    "sqft": 4850,
+    "lot": "0.42 acres",
+    "yearBuilt": 2019,
+    "mls": "",
+    "headline": "A River Ranch estate made for gathering",
+    "description": "This is a sample listing that shows how a home will appear on the site. Replace it with a real property by editing data/listings.json. A description of two or three short paragraphs reads best.\n\nUse the second paragraph for the story of the home: the morning light in the kitchen, the porch where the evenings happen, the details a buyer won't see in the photos.",
+    "features": [
+      "Chef's kitchen with gas range and butler's pantry",
+      "Saltwater pool and outdoor kitchen",
+      "Primary suite on the first floor",
+      "Three-car garage",
+      "Walkable to the River Ranch Town Center"
+    ],
+    "photos": [
+      "assets/img/listings/sample-1.svg",
+      "assets/img/listings/sample-2.svg",
+      "assets/img/listings/sample-3.svg",
+      "assets/img/listings/sample-4.svg"
+    ]
+  },
+  {
+    "id": "sample-sugar-mill-pond-home",
+    "sample": true,
+    "status": "Coming Soon",
+    "featured": true,
+    "address": "200 Sample Court",
+    "neighborhood": "Sugar Mill Pond",
+    "city": "Youngsville",
+    "state": "LA",
+    "zip": "70592",
+    "price": 685000,
+    "beds": 4,
+    "baths": 3,
+    "sqft": 3120,
+    "lot": "0.25 acres",
+    "yearBuilt": 2021,
+    "mls": "",
+    "headline": "Traditional Acadian charm on the pond",
+    "description": "This is a sample listing. Coming Soon homes are a great way to collect buyer interest before a property hits the market.",
+    "features": [
+      "Pond views from the back porch",
+      "Open living and dining with 12-foot ceilings",
+      "Oversized bonus room",
+      "Close to neighborhood parks and trails"
+    ],
+    "photos": [
+      "assets/img/listings/sample-2.svg",
+      "assets/img/listings/sample-3.svg",
+      "assets/img/listings/sample-1.svg"
+    ]
+  },
+  {
+    "id": "sample-broussard-acreage",
+    "sample": true,
+    "status": "Pending",
+    "featured": false,
+    "address": "300 Sample Road",
+    "neighborhood": "",
+    "city": "Broussard",
+    "state": "LA",
+    "zip": "70518",
+    "price": 849000,
+    "beds": 4,
+    "baths": 3.5,
+    "sqft": 3600,
+    "lot": "2.1 acres",
+    "yearBuilt": 2015,
+    "mls": "",
+    "headline": "Room to breathe, minutes from town",
+    "description": "This is a sample listing marked Pending. Pending homes stay on the site until they close, then you remove them from the listings file.",
+    "features": [
+      "Two acres with mature live oaks",
+      "Detached shop with power",
+      "Wraparound porch",
+      "Whole-home generator"
+    ],
+    "photos": [
+      "assets/img/listings/sample-3.svg",
+      "assets/img/listings/sample-4.svg",
+      "assets/img/listings/sample-1.svg"
+    ]
+  }
+]
