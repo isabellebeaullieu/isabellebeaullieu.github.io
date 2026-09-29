@@ -107,6 +107,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; marg
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(88,104,146,.3) 0%, rgba(88,104,146,0) 40%, rgba(88,104,146,.5) 100%);
 }
+.hero--photo::before { background: linear-gradient(180deg, rgba(38,44,60,.45) 0%, rgba(38,44,60,.1) 30%, rgba(38,44,60,.35) 55%, rgba(38,44,60,.72) 100%); }
 .hero .wrap { position: relative; width: 100%; padding-bottom: clamp(56px, 10vh, 110px); }
 .hero .eyebrow { color: #fff; }
 .hero h1, .hero p, .hero .eyebrow { text-shadow: 0 1px 18px rgba(60,72,104,.35); }
@@ -241,6 +242,16 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; marg
 
 .back { display: inline-block; margin: 28px 0 22px; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; color: var(--stone); }
 .back:hover { color: var(--ink); }
+
+/* ---------- Neighborhood ---------- */
+.hood { margin-top: clamp(72px, 9vw, 120px); padding-top: clamp(56px, 7vw, 90px); border-top: 1px solid var(--line); }
+.hood h2 { font-size: clamp(32px, 4vw, 46px); margin-bottom: 14px; }
+.hood .lede { margin: 0 0 36px; }
+.hood__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.hood__grid button { padding: 0; border: 0; background: var(--ivory); cursor: zoom-in; aspect-ratio: 4 / 3; overflow: hidden; }
+.hood__grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+.hood__grid button:hover img { transform: scale(1.04); }
+@media (max-width: 760px) { .hood__grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- Lightbox ---------- */
 .lightbox { position: fixed; inset: 0; background: rgba(43,47,56,.95); z-index: 100; display: none; align-items: center; justify-content: center; }
