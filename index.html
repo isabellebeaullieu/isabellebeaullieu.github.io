@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Isabelle Beaullieu | Lafayette Homes for Sale">
   <meta property="og:description" content="Browse current listings in Lafayette and South Louisiana and schedule a private showing.">
-  <meta property="og:image" content="assets/img/logo.svg">
+  <meta property="og:image" content="https://isabellebeaullieu.github.io/assets/img/listings/website-photos/101-tortola-lane/01.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b2c1df'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='30' fill='%23ffffff' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,7 +150,7 @@
 
   // Hero image from the first listing photo
   const heroPhoto = listings[0] && listings[0].photos && listings[0].photos[0];
-  if (heroPhoto && !/sample-\d\.svg$/.test(heroPhoto)) document.getElementById("hero").style.backgroundImage = `url("${heroPhoto}")`;
+  if (heroPhoto && !/sample-\d\.svg$/.test(heroPhoto)) { const h = document.getElementById("hero"); h.style.backgroundImage = `url("${heroPhoto}")`; h.classList.add("hero--photo"); }
 
   function render(status) {
     const shown = status === "All" ? listings : listings.filter((l) => l.status === status);
