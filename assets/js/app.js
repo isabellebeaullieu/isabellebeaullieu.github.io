@@ -48,6 +48,14 @@
     document.querySelectorAll("[data-mailto]").forEach((el) => (el.href = "mailto:" + C.email));
     document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
+    // Louisiana rule: the licensing line shows the brokerage's office phone
+    if (C.brokerPhone) {
+      document.querySelectorAll(".footer__license [data-tel]").forEach((el) => {
+        el.href = "tel:" + String(C.brokerPhone).replace(/[^\d+]/g, "");
+        el.textContent = C.brokerPhone;
+      });
+    }
+
     // Logo: shown in white on the periwinkle header, hero and footer
     if (C.logo) {
       document.querySelectorAll(".brand, .footer__name").forEach((el) => {

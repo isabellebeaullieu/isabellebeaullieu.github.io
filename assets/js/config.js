@@ -6,7 +6,8 @@ window.SITE_CONFIG = {
   agentName: "Isabelle Beaullieu",
   title: "Realtor®",
   brokerage: "Compass",
-  phone: "337.451.7696",
+  brokerPhone: "337.233.9700",   // Compass office line, shown in the licensing line of the footer
+  phone: "337.451.7696",         // Isabelle's direct line
   email: "isabelle.beaullieu@compass.com",
   officeAddress: "2000 Kaliste Saloom Rd., Suite 101, Lafayette, LA 70508",
   serviceArea: "Lafayette & South Louisiana",
