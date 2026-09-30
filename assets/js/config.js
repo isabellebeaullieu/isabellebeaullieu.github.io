@@ -17,5 +17,5 @@ window.SITE_CONFIG = {
 
   // Paste the Google Apps Script "Web app" URL here once it is deployed.
   // Until then, the forms show a message asking buyers to call or email.
-  leadEndpoint: ""
+  leadEndpoint: "https://script.google.com/macros/s/AKfycbxcQzXgmxk7Li02Cv_Vy7AP6mWy3spb_Tw38lkdWtdqYmbkD35sWXEJ0_6tkd4Cebtz/exec"
 };
