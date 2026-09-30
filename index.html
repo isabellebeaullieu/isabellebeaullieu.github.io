@@ -144,6 +144,14 @@
   try { listings = await Site.loadListings(); }
   catch (e) { grid.innerHTML = '<p class="empty">Listings are loading slowly. Please refresh the page.</p>'; return; }
 
+  // Headshot in the About section (keeps the placeholder if the file is missing)
+  if (Site.C.headshot) {
+    const img = new Image();
+    img.alt = Site.C.agentName;
+    img.onload = () => { const p = document.getElementById("portrait"); p.textContent = ""; p.classList.add("has-photo"); p.appendChild(img); };
+    img.src = Site.C.headshot;
+  }
+
   // Featured first, then by status order, then price high to low
   const order = { "Active": 0, "Coming Soon": 1, "Pending": 2 };
   listings.sort((a, b) => (b.featured === true) - (a.featured === true) || (order[a.status] ?? 9) - (order[b.status] ?? 9) || (b.price || 0) - (a.price || 0));
