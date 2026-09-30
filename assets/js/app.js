@@ -88,7 +88,7 @@
         try {
           await fetch(C.leadEndpoint, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
           form.reset();
-          form.querySelectorAll(".field, .form__note, button[type=submit]").forEach((el) => (el.style.display = "none"));
+          form.querySelectorAll(".field, .form__note, .form__consent, button[type=submit]").forEach((el) => (el.style.display = "none"));
           status.textContent = "Thank you. I'll be in touch shortly.";
         } catch (err) {
           status.textContent = `Something went wrong. Please call ${C.phone} or email ${C.email}.`;
