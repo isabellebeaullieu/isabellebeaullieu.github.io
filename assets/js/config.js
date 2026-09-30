@@ -16,7 +16,7 @@ window.SITE_CONFIG = {
   logo: "assets/img/logo.svg",
 
   // Headshot for the "Meet Isabelle" section. Shows a placeholder until the file exists.
-  headshot: "assets/img/isabelle.jpg",
+  headshot: "assets/img/Screenshot%202026-09-30%20at%201.54.52%20PM.png",
 
   // Paste the Google Apps Script "Web app" URL here once it is deployed.
   // Until then, the forms show a message asking buyers to call or email.
