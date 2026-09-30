@@ -17,7 +17,7 @@ window.SITE_CONFIG = {
   logo: "assets/img/logo.svg",
 
   // Official Compass logo for the footer. Leave blank to hide it.
-  compassLogo: "",
+  compassLogo: "assets/img/compass-logo.svg",
 
   // Headshot for the "Meet Isabelle" section. Shows a placeholder until the file exists.
   headshot: "assets/img/Screenshot%202026-09-30%20at%201.54.52%20PM.png",
