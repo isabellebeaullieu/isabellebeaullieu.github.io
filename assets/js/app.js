@@ -56,6 +56,15 @@
       });
     }
 
+    // Compass logo in the footer (stays hidden until a logo file is set)
+    if (C.compassLogo) {
+      document.querySelectorAll(".footer__compass").forEach((a) => {
+        const img = a.querySelector("img");
+        img.onload = () => { a.hidden = false; };
+        img.src = C.compassLogo;
+      });
+    }
+
     // Logo: shown in white on the periwinkle header, hero and footer
     if (C.logo) {
       document.querySelectorAll(".brand, .footer__name").forEach((el) => {
