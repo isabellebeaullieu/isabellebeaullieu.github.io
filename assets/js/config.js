@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   brokerage: "Compass",
   phone: "337.451.7696",
   email: "isabelle.beaullieu@compass.com",
-  officeAddress: "2000 Kaliste Saloom Rd. 101, Lafayette, LA 70508",
+  officeAddress: "2000 Kaliste Saloom Rd., Suite 101, Lafayette, LA 70508",
   serviceArea: "Lafayette & South Louisiana",
 
   // Logo file (a one-color SVG). The site shows it in white on the periwinkle
