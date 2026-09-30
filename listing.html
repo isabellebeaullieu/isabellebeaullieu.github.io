@@ -62,12 +62,17 @@
       <div>
         <div class="footer__label">Office</div>
         <p>Compass</p>
-        <p data-c="officeAddress"></p>
+        <p>2000 Kaliste Saloom Rd., Suite 101<br>Lafayette, LA 70508</p>
+        <p>Licensed in Louisiana</p>
       </div>
     </div>
     <div class="footer__legal">
-      <span>© <span data-year></span> Isabelle Beaullieu. Isabelle Beaullieu is a real estate agent affiliated with Compass. All information is deemed reliable but not guaranteed and should be independently verified.</span>
-      <span class="eho"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15 16 5l13 10"/><path d="M6 13v14h20V13"/><path d="M11 17h10M11 21h10"/></svg>Equal Housing Opportunity</span>
+      <p class="footer__license">Isabelle Beaullieu is a real estate agent licensed in Louisiana and affiliated with <strong>Compass</strong>, a licensed real estate broker. Compass · 2000 Kaliste Saloom Rd., Suite 101, Lafayette, LA 70508 · <a data-tel href="#"><span data-c="phone"></span></a></p>
+      <p>Compass abides by Equal Housing Opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. No statement is made as to accuracy of any description. All measurements and square footages are approximate. This is not intended to solicit property already listed. Nothing herein shall be construed as legal, accounting, or other professional advice outside the realm of real estate brokerage.</p>
+      <div class="footer__bottom">
+        <span>© <span data-year></span> Isabelle Beaullieu · <a href="privacy.html">Privacy Policy</a></span>
+        <span class="eho"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15 16 5l13 10"/><path d="M6 13v14h20V13"/><path d="M11 17h10M11 21h10"/></svg>Equal Housing Opportunity</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -153,6 +158,7 @@
           </div>
           <div class="field"><label for="i-msg">Message</label><textarea id="i-msg" name="message">I'd like to schedule a showing of ${e(l.address)}.</textarea></div>
           <button class="btn" type="submit">Request a Showing</button>
+          <p class="form__consent">By submitting, you agree that Isabelle Beaullieu may contact you by phone, text, or email about your inquiry. Message and data rates may apply. Consent is not a condition of any purchase. See our <a href="privacy.html">Privacy Policy</a>.</p>
           <p class="form__status" role="status" aria-live="polite"></p>
         </form>
         <div class="inquiry__agent">
