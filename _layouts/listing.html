@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "Listing | Isabelle Beaullieu | Compass" }}</title>
+  <meta name="description" content="{{ page.description | default: "Home for sale in Lafayette and South Louisiana, presented by Isabelle Beaullieu, Realtor® with Compass." }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | default: "Homes for Sale | Isabelle Beaullieu" }}">
+  <meta property="og:description" content="{{ page.description | default: "Homes for sale in Lafayette and South Louisiana with Isabelle Beaullieu, Realtor® with Compass." }}">
+  <meta property="og:image" content="{{ page.image | default: "https://isabellebeaullieu.com/assets/img/listings/website-photos/101-tortola-lane/01.jpg" }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b2c1df'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='30' fill='%23ffffff' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/gate.css">
+  <link rel="canonical" href="https://isabellebeaullieu.com{{ page.permalink | default: "/listing.html" }}">
+</head>
+<body>
+
+<header class="site-header site-header--solid">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="brand__name" data-c="agentName">Isabelle Beaullieu</span>
+      <span class="brand__sub">Realtor® · Compass</span>
+    </a>
+    <nav class="nav">
+      <a href="./#listings">Listings</a>
+      <a href="./#about">About</a>
+      <a href="./#contact">Contact</a>
+      <a class="nav__phone" data-tel href="#"><span data-c="phone"></span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <a class="back" href="./#listings">← All Listings</a>
+  <div id="listing"><p class="empty" style="padding:80px 0">Loading…</p></div>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" type="button" aria-label="Close">×</button>
+  <button class="lb-prev" type="button" aria-label="Previous photo">‹</button>
+  <img alt="">
+  <button class="lb-next" type="button" aria-label="Next photo">›</button>
+  <div class="lb-count"></div>
+</div>
+
+<div style="height:120px"></div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__name" data-c="agentName">Isabelle Beaullieu</div>
+        <p>Realtor® · Compass</p>
+        <p>Louisiana License #995716392</p>
+        <p style="margin-top:14px" data-c="serviceArea"></p>
+      </div>
+      <div>
+        <div class="footer__label">Contact</div>
+        <p><a data-tel href="#"><span data-c="phone"></span></a></p>
+        <p><a data-mailto href="#"><span data-c="email"></span></a></p>
+        <div class="social footer__social"></div>
+      </div>
+      <div>
+        <div class="footer__label">Brokerage</div>
+        <a class="footer__compass" href="https://www.compass.com/" target="_blank" rel="noopener" hidden><img alt="Compass"></a>
+        <p><a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a></p>
+        <p>2000 Kaliste Saloom Rd., Suite 101<br>Lafayette, LA 70508</p>
+        <p>Managing Broker: Lori McCarthy</p>
+        <p>Brokerage License #995685215</p>
+        <p>Licensed in Louisiana</p>
+        <p><a class="footer__link" href="https://www.compass.com/" target="_blank" rel="noopener">Visit compass.com ↗</a></p>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <p class="footer__license">Isabelle Beaullieu is a real estate agent licensed in Louisiana and affiliated with <strong><a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a></strong>, a licensed real estate broker. Compass · 2000 Kaliste Saloom Rd., Suite 101, Lafayette, LA 70508 · <a data-tel href="#"><span data-c="phone"></span></a></p>
+      <p>Compass abides by Equal Housing Opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. No statement is made as to accuracy of any description. All measurements and square footages are approximate. This is not intended to solicit property already listed. Nothing herein shall be construed as legal, accounting, or other professional advice outside the realm of real estate brokerage.</p>
+      <div class="footer__idx">
+        <img src="assets/img/raa-logo.svg" alt="REALTOR® Association of Acadiana" width="87" height="49" loading="lazy">
+        <div>
+          <p>IDX information is provided exclusively for consumers’ personal, non-commercial use and that it may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information deemed reliable but not guaranteed to be accurate. Listing information updated daily.</p>
+          <p>Information deemed reliable but not guaranteed. All measurements are approximate and should be independently verified.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year></span> Isabelle Beaullieu · <a href="privacy">Privacy Policy</a></span>
+        <span class="eho"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15 16 5l13 10"/><path d="M6 13v14h20V13"/><path d="M11 17h10M11 21h10"/></svg>Equal Housing Opportunity</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/gate.js"></script>
+<script>
+(async function () {
+  const root = document.getElementById("listing");
+  // Clean pages (e.g. /101-tortola-lane/) set the listing here; old links use ?id=
+  const fixedId = {{ page.listing_id | jsonify }};
+  const id = fixedId || new URLSearchParams(location.search).get("id");
+  let l;
+  try { l = (await Site.loadListings()).find((x) => x.id === id); } catch (e) {}
+
+  // Send old listing.html?id= links to the listing's clean address
+  if (l && l.slug && !fixedId) { location.replace("/" + l.slug + "/"); return; }
+
+  if (!l) {
+    root.innerHTML = `
+      <div style="padding:60px 0 20px;max-width:640px">
+        <p class="eyebrow">No Longer Available</p>
+        <h1 class="section-title">This home has found its owner</h1>
+        <p class="lede" style="margin:22px 0 34px">The listing you're looking for has sold or been removed. Browse current homes, or tell me what you're looking for and I'll send you similar properties.</p>
+        <a class="btn" href="./#listings">View Current Listings</a>
+        <a class="btn btn--ghost" href="./#contact" style="margin-left:10px">Contact Isabelle</a>
+      </div>`;
+    return;
+  }
+
+  const e = Site.esc, C = Site.C;
+  const photos = (l.photos && l.photos.length) ? l.photos : ["assets/img/listings/sample-1.svg"];
+  document.title = `${l.address}, ${l.city} | ${Site.price(l.price)} | Isabelle Beaullieu`;
+  const desc = document.querySelector('meta[name="description"]');
+  document.querySelector('link[rel="canonical"]').href = "https://isabellebeaullieu.com/" + (l.slug ? l.slug + "/" : "listing.html?id=" + encodeURIComponent(l.id));
+  desc.content = `${l.headline || ""} ${l.beds || ""} bed, ${l.baths || ""} bath home at ${Site.fullAddress(l)}.`.trim();
+
+  const hood = l.neighborhoodPhotos || [];
+  // galleryPicks: optional photo numbers (1 = first photo) for the three photos shown up top
+  const picks = (l.galleryPicks || [1, 2, 3]).map((n) => n - 1).filter((i) => photos[i]).slice(0, 3);
+  const shown = picks.map((i) => photos[i]);
+  const galleryClass = photos.length === 1 ? "gallery gallery--one" : photos.length === 2 ? "gallery gallery--two" : "gallery";
+  const paragraphs = String(l.description || "").split(/\n\s*\n/).map((p) => `<p>${e(p)}</p>`).join("");
+  const facts = [
+    l.lot && `Lot: ${e(l.lot)}`,
+    l.yearBuilt && `Built: ${e(l.yearBuilt)}`,
+    l.mls && `MLS# ${e(l.mls)}`
+  ].filter(Boolean).map((f) => `<span>${f}</span>`).join("");
+
+  root.innerHTML = `
+    <div class="${galleryClass}">
+      ${shown.map((p, i) => `<button type="button" data-i="${picks[i]}"><img src="${e(p)}" alt="${e(l.address)} photo ${i + 1}"${i ? ' loading="lazy"' : ""}>${i === 0 && photos.length > 1 ? `<span class="gallery__more gallery__more--mobile">${photos.length} photos</span>` : ""}${i === shown.length - 1 && photos.length > 1 ? `<span class="gallery__more">View all ${photos.length} photos</span>` : ""}</button>`).join("")}
+    </div>
+
+    <div class="detail">
+      <article>
+        <p class="eyebrow">${e(l.status)}${l.sample ? " · Sample Listing" : ""}</p>
+        <div class="detail__price">${Site.price(l.price)}</div>
+        <p class="detail__address">${e(l.address)}</p>
+        <p class="detail__place">${e([l.neighborhood, `${l.city}, ${l.state || "LA"} ${l.zip || ""}`].filter(Boolean).join(" · "))}</p>
+
+        <div class="stats">
+          <div><strong>${Site.num(l.beds) || "—"}</strong><span>Beds</span></div>
+          <div><strong>${l.bathsDisplay ? e(l.bathsDisplay) : (Site.num(l.baths) || "—")}</strong><span>${l.bathsDisplay ? "Full / Half Baths" : "Baths"}</span></div>
+          <div><strong>${Site.num(l.sqft) || "—"}</strong><span>Sq Ft</span></div>
+          <div><strong>${l.price && l.sqft ? "$" + Math.round(l.price / l.sqft).toLocaleString("en-US") : "—"}</strong><span>Per Sq Ft</span></div>
+        </div>
+
+        ${l.headline ? `<h2>${e(l.headline)}</h2>` : ""}
+        <div class="detail__desc">${paragraphs}</div>
+        ${(l.features || []).length ? `<ul class="features">${l.features.map((f) => `<li>${e(f)}</li>`).join("")}</ul>` : ""}
+        ${facts ? `<div class="facts">${facts}</div>` : ""}
+      </article>
+
+      <aside class="inquiry" id="inquiry">
+        <p class="eyebrow">Private Showing</p>
+        <h3>Interested in this home?</h3>
+        <p style="margin:0;color:var(--stone);font-size:15px">Request a tour or ask a question. I'll reach out personally.</p>
+        <form class="form" data-lead novalidate>
+          <input type="hidden" name="property" value="${e(Site.fullAddress(l))}">
+          <input type="hidden" name="listing_id" value="${e(l.id)}">
+          <input type="hidden" name="mls" value="${e(l.mls || "")}">
+          <div class="hp" aria-hidden="true"><label>Website <input name="company_website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="field"><label for="i-name">Name</label><input id="i-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="i-phone">Phone</label><input id="i-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="i-pre">Pre-approved?</label>
+            <select id="i-pre" name="preapproved"><option value="">Select</option><option>Yes</option><option>Not yet</option><option>Paying cash</option></select>
+          </div>
+          <div class="field"><label for="i-msg">Message</label><textarea id="i-msg" name="message">I'd like to schedule a showing of ${e(l.address)}.</textarea></div>
+          <button class="btn" type="submit">Request a Showing</button>
+          <p class="form__consent">By submitting, you agree that Isabelle Beaullieu may contact you by phone, text, or email about your inquiry. Message and data rates may apply. Consent is not a condition of any purchase. See our <a href="privacy">Privacy Policy</a>.</p>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="inquiry__agent">
+          <strong>${e(C.agentName)}</strong>
+          Realtor® · Compass<br>
+          <a data-tel href="tel:${e(String(C.phone).replace(/[^\d+]/g, ""))}">${e(C.phone)}</a>
+        </div>
+      </aside>
+    </div>
+    ${hood.length ? `
+    <section class="hood">
+      <p class="eyebrow">The Neighborhood</p>
+      <h2>${e(l.neighborhoodTitle || l.neighborhood || "The Neighborhood")}</h2>
+      ${l.neighborhoodText ? `<p class="lede">${e(l.neighborhoodText)}</p>` : ""}
+      <div class="hood__grid">${hood.map((p, i) => `<button type="button" data-h="${i}"><img src="${e(p)}" alt="${e(l.neighborhood || "Neighborhood")} photo ${i + 1}" loading="lazy"></button>`).join("")}</div>
+    </section>` : ""}
+    <a class="mobile-cta btn" href="#inquiry">Request a Showing</a>`;
+
+  // Keep the "Request a Showing" button on this page (the page base points to the home page)
+  const cta = root.querySelector(".mobile-cta");
+  if (cta) cta.addEventListener("click", (ev) => { ev.preventDefault(); document.getElementById("inquiry").scrollIntoView({ behavior: "smooth" }); });
+
+  // Forms added after page load need wiring
+  document.dispatchEvent(new Event("site:forms"));
+
+  // Ask visitors to register before seeing more than the main photo
+  if (window.Gate) Gate.protect(l, photos.length);
+
+  // Lightbox
+  const lb = document.getElementById("lightbox"), img = lb.querySelector("img"), count = lb.querySelector(".lb-count");
+  let cur = 0, set = photos;
+  const show = (i) => { cur = (i + set.length) % set.length; img.src = set[cur]; img.alt = `Photo ${cur + 1}`; count.textContent = `${cur + 1} / ${set.length}`; };
+  const open = (i, s = photos) => { set = s; show(i); lb.classList.add("is-open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; };
+  const close = () => { lb.classList.remove("is-open"); lb.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; };
+  root.querySelectorAll(".gallery button").forEach((b) => b.addEventListener("click", () => open(+b.dataset.i)));
+  root.querySelectorAll(".hood__grid button").forEach((b) => b.addEventListener("click", () => open(+b.dataset.h, hood)));
+  lb.querySelector(".lb-close").onclick = close;
+  lb.querySelector(".lb-prev").onclick = () => show(cur - 1);
+  lb.querySelector(".lb-next").onclick = () => show(cur + 1);
+  lb.addEventListener("click", (ev) => { if (ev.target === lb) close(); });
+  document.addEventListener("keydown", (ev) => {
+    if (!lb.classList.contains("is-open")) return;
+    if (ev.key === "Escape") close(); if (ev.key === "ArrowLeft") show(cur - 1); if (ev.key === "ArrowRight") show(cur + 1);
+  });
+  let sx = 0;
+  lb.addEventListener("touchstart", (ev) => (sx = ev.touches[0].clientX), { passive: true });
+  lb.addEventListener("touchend", (ev) => { const dx = ev.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); });
+})();
+</script>
+</body>
+</html>

@@ -26,8 +26,11 @@ A simple site that shows current listings and sends buyer inquiries to a Google 
 - The first listing on the page also becomes the large photo at the top of the home page.
 - Keep commas between listings, and none after the last one.
 
-3. Add the new listing's address to `sitemap.xml` (copy a `<url>` line and change the `id`), so Google finds it.
+3. Give the listing a clean web address: add `"slug": "123-main-st"` to its block in `data/listings.json`, then copy `homes/101-tortola-lane.html` to `homes/123-main-st.html` and change the `permalink`, `listing_id`, `title`, `description`, and `image` lines. The listing then lives at `isabellebeaullieu.com/123-main-st/`, and the title, description, and photo show up when the link is shared by text or on social media.
+4. Add the new address to `sitemap.xml` (copy a `<url>` line), so Google finds it.
+
+`_layouts/listing.html` is the design used by every listing page. Edit it once and every listing updates.
 
 ## Remove a sold listing
 
-Delete that listing's block from `data/listings.json` (and its photo folder if you like). Anyone who opens an old link sees a friendly "This home has found its owner" page with a link back to current listings.
+Delete that listing's block from `data/listings.json` (and its photo folder if you like). Keep its file in `homes/`, so anyone who opens the old link sees a friendly "This home has found its owner" page with a link back to current listings.
