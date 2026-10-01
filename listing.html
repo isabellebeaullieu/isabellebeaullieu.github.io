@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/gate.css">
 </head>
 <body>
 
@@ -91,6 +92,7 @@
 
 <script src="assets/js/config.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/gate.js"></script>
 <script>
 (async function () {
   const root = document.getElementById("listing");
@@ -191,6 +193,9 @@
 
   // Forms added after page load need wiring
   document.dispatchEvent(new Event("site:forms"));
+
+  // Ask visitors to register before seeing more than the main photo
+  if (window.Gate) Gate.protect(l, photos.length);
 
   // Lightbox
   const lb = document.getElementById("lightbox"), img = lb.querySelector("img"), count = lb.querySelector(".lb-count");

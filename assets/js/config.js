@@ -24,5 +24,9 @@ window.SITE_CONFIG = {
 
   // Paste the Google Apps Script "Web app" URL here once it is deployed.
   // Until then, the forms show a message asking buyers to call or email.
-  leadEndpoint: "https://script.google.com/macros/s/AKfycbxcQzXgmxk7Li02Cv_Vy7AP6mWy3spb_Tw38lkdWtdqYmbkD35sWXEJ0_6tkd4Cebtz/exec"
+  leadEndpoint: "https://script.google.com/macros/s/AKfycbxcQzXgmxk7Li02Cv_Vy7AP6mWy3spb_Tw38lkdWtdqYmbkD35sWXEJ0_6tkd4Cebtz/exec",
+
+  // One-click sign-up on listing pages. Each button appears once its ID is filled in.
+  googleClientId: "",   // Google Cloud "OAuth client ID" (ends in .apps.googleusercontent.com)
+  facebookAppId: ""     // Meta for Developers "App ID"
 };
