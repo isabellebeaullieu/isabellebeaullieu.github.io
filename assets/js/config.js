@@ -26,6 +26,11 @@ window.SITE_CONFIG = {
   // Until then, the forms show a message asking buyers to call or email.
   leadEndpoint: "https://script.google.com/macros/s/AKfycbxcQzXgmxk7Li02Cv_Vy7AP6mWy3spb_Tw38lkdWtdqYmbkD35sWXEJ0_6tkd4Cebtz/exec",
 
+  // Social profiles: shown as icons in the footer and phone menu. Leave blank to hide one.
+  instagram: "https://www.instagram.com/isabellebeaullieu/",
+  facebook: "https://www.facebook.com/isabelle.beaullieu",
+  linkedin: "https://www.linkedin.com/in/isabelle-beaullieu-97908b266/",
+
   // One-click sign-up on listing pages. Each button appears once its ID is filled in.
   googleClientId: "",   // Google Cloud "OAuth client ID" (ends in .apps.googleusercontent.com)
   facebookAppId: ""     // Meta for Developers "App ID"

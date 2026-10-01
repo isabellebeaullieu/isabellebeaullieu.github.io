@@ -38,6 +38,19 @@
       </a>`;
   }
 
+  /* ---------- Social profile links ---------- */
+  const ICONS = {
+    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 8.5 2.7 8.9 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.3-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"/></svg>',
+    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>',
+    facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.8-4.69 4.54-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>'
+  };
+  function socialHTML() {
+    return [["instagram", "Instagram"], ["facebook", "Facebook"], ["linkedin", "LinkedIn"]]
+      .filter(([k]) => C[k])
+      .map(([k, label]) => `<a href="${esc(C[k])}" target="_blank" rel="noopener" aria-label="${label}" title="${label}">${ICONS[k]}</a>`)
+      .join("");
+  }
+
   /* ---------- Fill contact details everywhere ---------- */
   function fillContact() {
     const tel = "tel:" + String(C.phone || "").replace(/[^\d+]/g, "");
@@ -56,6 +69,9 @@
         el.textContent = C.brokerPhone;
       });
     }
+
+    // Instagram / Facebook icons
+    document.querySelectorAll(".footer__social").forEach((el) => { el.innerHTML = socialHTML(); el.hidden = !el.innerHTML; });
 
     // Compass logo in the footer (stays hidden until a logo file is set)
     if (C.compassLogo) {
@@ -142,6 +158,8 @@
     btn.setAttribute("aria-expanded", "false");
     btn.innerHTML = '<span class="nav-toggle__bars" aria-hidden="true"></span><span>Menu</span>';
     nav.before(btn);
+    const social = socialHTML();
+    if (social) nav.insertAdjacentHTML("beforeend", `<div class="social nav__social">${social}</div>`);
     const setOpen = (open) => { header.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", String(open)); };
     btn.addEventListener("click", () => setOpen(!header.classList.contains("is-open")));
     nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });

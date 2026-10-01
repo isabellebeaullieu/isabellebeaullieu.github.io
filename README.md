@@ -26,6 +26,8 @@ A simple site that shows current listings and sends buyer inquiries to a Google 
 - The first listing on the page also becomes the large photo at the top of the home page.
 - Keep commas between listings, and none after the last one.
 
+3. Add the new listing's address to `sitemap.xml` (copy a `<url>` line and change the `id`), so Google finds it.
+
 ## Remove a sold listing
 
 Delete that listing's block from `data/listings.json` (and its photo folder if you like). Anyone who opens an old link sees a friendly "This home has found its owner" page with a link back to current listings.
