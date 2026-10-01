@@ -88,7 +88,7 @@
           <div class="hp" aria-hidden="true"><label>Website <input name="company_website" tabindex="-1" autocomplete="off"></label></div>
           <button class="btn gate__submit" type="submit">View This Home</button>
           <p class="gate__error" role="alert"></p>
-          <p class="form__consent">By registering, you agree that Isabelle Beaullieu may contact you by phone, text, or email about this and similar properties. Message and data rates may apply. Consent is not a condition of any purchase. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+          <p class="form__consent">By registering, you agree that Isabelle Beaullieu may contact you by phone, text, or email about this and similar properties. Message and data rates may apply. Consent is not a condition of any purchase. See our <a href="privacy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
         </form>
         <a class="gate__back" href="./#listings">← Back to all listings</a>
       </div>`;

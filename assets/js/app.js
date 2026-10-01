@@ -18,7 +18,7 @@
   function cardHTML(l) {
     const photo = (l.photos && l.photos[0]) || "assets/img/listings/sample-1.svg";
     return `
-      <a class="card reveal" href="listing.html?id=${encodeURIComponent(l.id)}" data-status="${esc(l.status)}">
+      <a class="card reveal" href="${l.slug ? "/" + encodeURIComponent(l.slug) + "/" : "listing.html?id=" + encodeURIComponent(l.id)}" data-status="${esc(l.status)}">
         <div class="card__media">
           <img src="${esc(photo)}" alt="${esc(l.address)}" loading="lazy">
           <span class="badge badge--${statusSlug(l.status)}">${esc(l.status)}</span>
