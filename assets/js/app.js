@@ -33,6 +33,7 @@
             ${l.baths ? `<span>${num(l.baths)} Baths</span>` : ""}
             ${l.sqft ? `<span>${num(l.sqft)} Sq Ft</span>` : ""}
           </div>
+          <div class="card__cta">View Home <span aria-hidden="true">→</span></div>
         </div>
       </a>`;
   }
@@ -128,8 +129,33 @@
     els.forEach((el) => io.observe(el));
   }
 
+  /* ---------- Header: solid on scroll, mobile menu ---------- */
+  function wireNav() {
+    const header = document.querySelector(".site-header");
+    const nav = header && header.querySelector(".nav");
+    if (!nav || header.querySelector(".nav-toggle")) return;
+    nav.id = "site-nav";
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "nav-toggle";
+    btn.setAttribute("aria-controls", "site-nav");
+    btn.setAttribute("aria-expanded", "false");
+    btn.innerHTML = '<span class="nav-toggle__bars" aria-hidden="true"></span><span>Menu</span>';
+    nav.before(btn);
+    const setOpen = (open) => { header.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", String(open)); };
+    btn.addEventListener("click", () => setOpen(!header.classList.contains("is-open")));
+    nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+
+    if (!header.classList.contains("site-header--solid")) {
+      const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 40);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+  }
+
   window.Site = { C, esc, price, num, place, fullAddress, statusSlug, loadListings, cardHTML, wireReveal };
 
-  document.addEventListener("DOMContentLoaded", () => { fillContact(); wireForms(); wireReveal(); });
+  document.addEventListener("DOMContentLoaded", () => { fillContact(); wireNav(); wireForms(); wireReveal(); });
   document.addEventListener("site:forms", () => { fillContact(); wireForms(); });
 })();
