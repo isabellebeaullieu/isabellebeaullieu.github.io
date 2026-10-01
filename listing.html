@@ -7,13 +7,14 @@
   <meta name="description" content="Home for sale in Lafayette and South Louisiana, presented by Isabelle Beaullieu, Realtor® with Compass.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Homes for Sale | Isabelle Beaullieu">
-  <meta property="og:image" content="https://isabellebeaullieu.github.io/assets/img/listings/website-photos/101-tortola-lane/01.jpg">
+  <meta property="og:image" content="https://isabellebeaullieu.com/assets/img/listings/website-photos/101-tortola-lane/01.jpg">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b2c1df'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='30' fill='%23ffffff' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/gate.css">
+  <link rel="canonical" href="https://isabellebeaullieu.com/listing.html">
 </head>
 <body>
 
@@ -60,6 +61,7 @@
         <div class="footer__label">Contact</div>
         <p><a data-tel href="#"><span data-c="phone"></span></a></p>
         <p><a data-mailto href="#"><span data-c="email"></span></a></p>
+        <div class="social footer__social"></div>
       </div>
       <div>
         <div class="footer__label">Brokerage</div>
@@ -116,6 +118,7 @@
   const photos = (l.photos && l.photos.length) ? l.photos : ["assets/img/listings/sample-1.svg"];
   document.title = `${l.address}, ${l.city} | ${Site.price(l.price)} | Isabelle Beaullieu`;
   const desc = document.querySelector('meta[name="description"]');
+  document.querySelector('link[rel="canonical"]').href = "https://isabellebeaullieu.com/listing.html?id=" + encodeURIComponent(l.id);
   desc.content = `${l.headline || ""} ${l.beds || ""} bed, ${l.baths || ""} bath home at ${Site.fullAddress(l)}.`.trim();
 
   const hood = l.neighborhoodPhotos || [];
