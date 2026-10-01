@@ -72,8 +72,8 @@
     modal.innerHTML = `
       <div class="gate__panel">
         <p class="eyebrow">Private Access</p>
-        <h2 id="gate-title">See the full home</h2>
-        <p class="gate__lede">Register for free to view all ${photoCount > 1 ? photoCount + " photos" : "photos"}, the full description, and the neighborhood for ${esc(listing.address)}.</p>
+        <h2 id="gate-title">See the full listing</h2>
+        <p class="gate__lede">View photos and property details.</p>
         ${hasGoogle || hasFacebook ? `
         <div class="gate__social">
           ${hasGoogle ? '<div class="gate__google" id="gate-google"></div>' : ""}
