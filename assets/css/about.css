@@ -16,3 +16,20 @@
 @media (max-width: 420px) {
   .about__connect span { font-size: 20px; }
 }
+
+/* "Hi, I'm Isabelle" script title across the top of the photo and into the text */
+.about__hello {
+  grid-column: 1 / -1; position: relative; z-index: 2;
+  margin: 0 0 calc(-1 * clamp(40px, 7vw, 110px) - .55em);
+  font-family: "Homemade Apple", "Bradley Hand", "Segoe Script", cursive;
+  font-weight: 400; font-size: clamp(34px, 6vw, 78px); line-height: 1.5;
+  color: var(--ink); letter-spacing: 0;
+  transform: rotate(-3deg); transform-origin: left center;
+  padding-left: clamp(6px, 3vw, 40px);
+  text-shadow: 0 0 18px rgba(255,255,255,.55);
+}
+@media (min-width: 821px) {
+  .about { align-items: start; row-gap: 0; }
+  .about__hello { margin-bottom: -.8em; }
+  .about > .reveal:last-child { padding-top: clamp(20px, 2.6vw, 40px); }
+}
