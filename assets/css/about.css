@@ -1,5 +1,5 @@
 /* Handwritten "Connect with me" note with an arrow to the social icons under the About photo */
-.about__connect { position: relative; height: 54px; margin-top: 16px; color: var(--ink); pointer-events: none; }
+.about__connect { position: relative; height: 56px; margin-top: 16px; color: var(--ink); pointer-events: none; }
 /* Arrow tip is pinned just right of center so it lands on the icon row; the note sits to its left */
 .about__connect svg {
   position: absolute; top: 4px; left: calc(50% - 23px);
@@ -9,8 +9,8 @@
 .about__connect span {
   position: absolute; top: 0; right: calc(50% + 21px);
   font-family: "Caveat", "Bradley Hand", "Segoe Print", cursive;
-  font-weight: 600; font-size: 30px; line-height: 1;
+  font-weight: 600; font-size: 32px; line-height: 1;
   transform: rotate(-5deg); transform-origin: right center; white-space: nowrap;
 }
 .about__connect + .social.about__social { margin-top: 2px; }
-@media (max-width: 420px) { .about__connect span { font-size: 25px; } }
+@media (max-width: 420px) { .about__connect span { font-size: 27px; } }
