@@ -55,7 +55,7 @@ body.gate-open { overflow: hidden; }
 .gate__submit { width: 100%; margin-top: 6px; }
 .gate__error { margin: 0; color: #8a3b2e; font-size: 14px; min-height: 0; }
 .gate__error:empty { display: none; }
-.gate__back { display: inline-block; margin-top: 18px; font-size: 13px; color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
+.gate__back { display: inline-block; padding: 12px 0; margin-top: 6px; font-size: 13px; color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
 .gate__back:hover { color: var(--ink); }
 
 @media (max-width: 560px) {
@@ -75,4 +75,11 @@ body.gate-open { overflow: hidden; }
   .gate__form { gap: 4px; }
   .gate__form .field input { padding: 4px 0; }
   .gate__back { margin-top: 10px; }
+}
+
+/* Land listings: three stats (Acres, Lot Sq Ft, Zoning) */
+.stats--land { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 560px) {
+  .stats--land { grid-template-columns: repeat(2, 1fr); }
+  .stats--land div:nth-child(3) { grid-column: 1 / -1; }
 }

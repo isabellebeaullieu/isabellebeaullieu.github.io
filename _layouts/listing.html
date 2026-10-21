@@ -124,11 +124,14 @@
   }
 
   const e = Site.esc, C = Site.C;
+  const land = Site.isLand(l);
   const photos = (l.photos && l.photos.length) ? l.photos : ["assets/img/listings/sample-1.svg"];
   document.title = `${l.address}, ${l.city} | ${Site.price(l.price)} | Isabelle Beaullieu`;
   const desc = document.querySelector('meta[name="description"]');
   document.querySelector('link[rel="canonical"]').href = "https://isabellebeaullieu.com/" + (l.slug ? l.slug + "/" : "listing.html?id=" + encodeURIComponent(l.id));
-  desc.content = `${l.headline || ""} ${l.beds || ""} bed, ${l.baths || ""} bath home at ${Site.fullAddress(l)}.`.trim();
+  desc.content = land
+    ? `${l.headline || ""} ${l.acres || ""}-acre lot at ${Site.fullAddress(l)}.`.trim()
+    : `${l.headline || ""} ${l.beds || ""} bed, ${l.baths || ""} bath home at ${Site.fullAddress(l)}.`.trim();
 
   const hood = l.neighborhoodPhotos || [];
   // galleryPicks: optional photo numbers (1 = first photo) for the three photos shown up top
@@ -138,6 +141,7 @@
   const paragraphs = String(l.description || "").split(/\n\s*\n/).map((p) => `<p>${e(p)}</p>`).join("");
   const facts = [
     l.lot && `Lot: ${e(l.lot)}`,
+    l.hoa && `HOA: ${e(l.hoa)}`,
     l.yearBuilt && `Built: ${e(l.yearBuilt)}`,
     l.mls && `MLS# ${e(l.mls)}`
   ].filter(Boolean).map((f) => `<span>${f}</span>`).join("");
@@ -149,16 +153,19 @@
 
     <div class="detail">
       <article>
-        <p class="eyebrow">${e(l.status)}${l.sample ? " · Sample Listing" : ""}</p>
+        <p class="eyebrow">${e(l.status)}${land ? " · Land" : ""}${l.sample ? " · Sample Listing" : ""}</p>
         <div class="detail__price">${Site.price(l.price)}</div>
         <p class="detail__address">${e(l.address)}</p>
         <p class="detail__place">${e([l.neighborhood, `${l.city}, ${l.state || "LA"} ${l.zip || ""}`].filter(Boolean).join(" · "))}</p>
 
-        <div class="stats">
+        <div class="stats${land ? " stats--land" : ""}">${land ? `
+          <div><strong>${Site.num(l.acres) || "—"}</strong><span>Acres</span></div>
+          <div><strong>${Site.num(l.lotSqft) || "—"}</strong><span>Lot Sq Ft</span></div>
+          <div><strong>${l.zoning ? e(l.zoning) : "—"}</strong><span>Zoning</span></div>` : `
           <div><strong>${Site.num(l.beds) || "—"}</strong><span>Beds</span></div>
           <div><strong>${l.bathsDisplay ? e(l.bathsDisplay) : (Site.num(l.baths) || "—")}</strong><span>${l.bathsDisplay ? "Full / Half Baths" : "Baths"}</span></div>
           <div><strong>${Site.num(l.sqft) || "—"}</strong><span>Sq Ft</span></div>
-          <div><strong>${l.price && l.sqft ? "$" + Math.round(l.price / l.sqft).toLocaleString("en-US") : "—"}</strong><span>Per Sq Ft</span></div>
+          <div><strong>${l.price && l.sqft ? "$" + Math.round(l.price / l.sqft).toLocaleString("en-US") : "—"}</strong><span>Per Sq Ft</span></div>`}
         </div>
 
         ${l.headline ? `<h2>${e(l.headline)}</h2>` : ""}
@@ -169,7 +176,7 @@
 
       <aside class="inquiry" id="inquiry">
         <p class="eyebrow">Private Showing</p>
-        <h3>Interested in this home?</h3>
+        <h3>Interested in this ${land ? "lot" : "home"}?</h3>
         <p style="margin:0;color:var(--stone);font-size:15px">Request a tour or ask a question. I'll reach out personally.</p>
         <form class="form" data-lead novalidate>
           <input type="hidden" name="property" value="${e(Site.fullAddress(l))}">

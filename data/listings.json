@@ -81,5 +81,43 @@
       "assets/img/listings/website-photos/sugar-mill-pond/10.jpg",
       "assets/img/listings/website-photos/sugar-mill-pond/07.jpg"
     ]
+  },
+  {
+    "id": "109-playfair-drive-lafayette",
+    "slug": "109-playfair-drive",
+    "status": "Active",
+    "propertyType": "Land",
+    "address": "109 Playfair Drive",
+    "neighborhood": "Delmar Estates",
+    "city": "Lafayette",
+    "state": "LA",
+    "zip": "70503",
+    "price": 65000,
+    "acres": 0.47,
+    "lotSqft": 20473,
+    "zoning": "Residential",
+    "hoa": "$120 per year",
+    "mls": "2600002732",
+    "headline": "Just under half an acre to build your dream home in Delmar Estates",
+    "description": "A rare opportunity to build your dream home on this 0.47-acre lot in Delmar Estates. Just under half an acre, this lot provides plenty of room to bring your vision to life. Conveniently located near Johnston Street, with easy access to dining, shopping, and everyday amenities. See the potential for yourself - schedule your showing today!\n\nThe lot is zoned residential for a single-family home and fronts a paved city street, with public water from Lafayette Parish Water District North and electricity and cable available. Schools are Ridge Elementary, Edgar Martin Middle, and Comeaux High in Lafayette Parish.",
+    "features": [
+      "0.47-acre residential lot (20,473 sq ft) in Delmar Estates",
+      "Paved city street frontage",
+      "Public water (Lafayette Parish Water District North); private sewer",
+      "Electricity and cable available",
+      "Zoned residential for a single-family home",
+      "Subdivision building covenants apply; lot may not be subdivided",
+      "Near Johnston Street dining, shopping, and everyday amenities"
+    ],
+    "photos": [
+      "assets/img/listings/website-photos/109-playfair-drive/01.jpg",
+      "assets/img/listings/website-photos/109-playfair-drive/02.jpg",
+      "assets/img/listings/website-photos/109-playfair-drive/03.jpg",
+      "assets/img/listings/website-photos/109-playfair-drive/04.jpg",
+      "assets/img/listings/website-photos/109-playfair-drive/05.jpg",
+      "assets/img/listings/website-photos/109-playfair-drive/06.jpg",
+      "assets/img/listings/website-photos/109-playfair-drive/07.jpg"
+    ],
+    "galleryPicks": [1, 3, 6]
   }
 ]
