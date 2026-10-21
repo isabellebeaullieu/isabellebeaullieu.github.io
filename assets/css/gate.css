@@ -64,3 +64,15 @@ body.gate-open { overflow: hidden; }
   .gate h2 { font-size: 28px; }
   .gate__lede { font-size: 15px; margin-bottom: 16px; }
 }
+
+/* Short phone screens: tighten the popup so it fits without scrolling */
+@media (max-height: 640px) {
+  .gate { align-items: flex-start; }
+  .gate__panel { padding: 20px 20px 14px; }
+  .gate__panel .eyebrow { margin-bottom: 6px; }
+  .gate h2 { font-size: 26px; margin-bottom: 4px; }
+  .gate__lede { font-size: 14px; margin-bottom: 10px; }
+  .gate__form { gap: 4px; }
+  .gate__form .field input { padding: 4px 0; }
+  .gate__back { margin-top: 10px; }
+}
