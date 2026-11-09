@@ -11,7 +11,9 @@ A simple site that shows current listings and sends buyer inquiries to a Google 
 | `assets/img/logo.svg` | The logo |
 | `assets/js/config.js` | Phone, email, office, logo, and the Google Sheet connection |
 | `assets/css/style.css` | Colors and fonts (the color settings are at the very top) |
-| `google-apps-script/Code.gs` | The script that goes inside the Google Sheet |
+| `google-apps-script/Code.gs` | The script that goes inside the "Website Leads" Google Sheet |
+| `google-apps-script/GuideLeads.gs` | The script that goes inside the separate "Guide Leads" Google Sheet |
+| `assets/guides/` | The Buyer's and Seller's Guide PDFs, covers, and sample-page images |
 
 ## Add a listing
 
@@ -34,3 +36,9 @@ A simple site that shows current listings and sends buyer inquiries to a Google 
 ## Remove a sold listing
 
 Delete that listing's block from `data/listings.json` (and its photo folder if you like). Keep its file in `homes/`, so anyone who opens the old link sees a friendly "This home has found its owner" page with a link back to current listings.
+
+## Buyer's and Seller's Guides
+
+The guides live at `isabellebeaullieu.com/buyers-guide/` and `isabellebeaullieu.com/sellers-guide/`, with a "Free Guides" section on the home page linking to both. Visitors enter their name, email, and phone before the PDF downloads. Each sign-up goes to the separate "Guide Leads" Google Sheet (set up with `google-apps-script/GuideLeads.gs`, connected through `guideLeadEndpoint` in `assets/js/config.js`), marked as a Buyer or Seller lead.
+
+To update a guide, replace `assets/guides/buyers-guide.pdf` or `assets/guides/sellers-guide.pdf` with a new file of the same name. If the cover changes, also replace `buyer-cover.jpg` or `seller-cover.jpg`.

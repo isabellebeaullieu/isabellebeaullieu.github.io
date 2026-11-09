@@ -26,6 +26,10 @@ window.SITE_CONFIG = {
   // Until then, the forms show a message asking buyers to call or email.
   leadEndpoint: "https://script.google.com/macros/s/AKfycbxcQzXgmxk7Li02Cv_Vy7AP6mWy3spb_Tw38lkdWtdqYmbkD35sWXEJ0_6tkd4Cebtz/exec",
 
+  // Buyer's / Seller's Guide downloads go to their own "Guide Leads" Google Sheet.
+  // Paste that sheet's Web app URL here (see google-apps-script/GuideLeads.gs).
+  guideLeadEndpoint: "https://script.google.com/macros/s/AKfycbw9vxCJ60Bw0iWsG4LNiQr52x1uVqRVgp5uDoS0RMeIMdO3s1r0ks0Yy6uv8WybL4dn7A/exec",
+
   // Social profiles: shown as icons in the footer and phone menu. Leave blank to hide one.
   instagram: "https://www.instagram.com/isabellebeaullieu/",
   facebook: "https://www.facebook.com/isabelle.beaullieu",
