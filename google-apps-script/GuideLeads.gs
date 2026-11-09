@@ -18,8 +18,8 @@
  * so the same URL keeps working.
  */
 
-// Where lead alerts go. Leave blank to send them to the Google account that owns this sheet.
-const NOTIFY_EMAIL = "";
+// Where lead alerts go (your Compass inbox). Leave blank to send them to the Google account that owns this sheet.
+const NOTIFY_EMAIL = "isabelle.beaullieu@compass.com";
 
 const SHEET_NAME = "Guide Leads";
 const HEADERS = ["Received", "Lead Type", "Name", "Phone", "Email", "Guide", "Page", "Status"];
