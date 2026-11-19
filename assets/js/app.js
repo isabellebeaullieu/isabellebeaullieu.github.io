@@ -17,6 +17,10 @@
 
   // Land listings ("propertyType": "Land") show lot size and zoning instead of beds and baths
   const isLand = (l) => /^(land|lot)$/i.test(l.propertyType || "");
+  // Lease listings ("propertyType": "Commercial Lease") show a monthly rate and space details
+  const isLease = (l) => /lease/i.test(l.propertyType || "");
+  const rate = (l) => price(l.price) + (isLease(l) && typeof l.price === "number" ? (l.priceUnit || "/mo") : "");
+  const kind = (l) => (isLease(l) ? "Space" : isLand(l) ? "Lot" : "Home");
 
   function cardHTML(l) {
     const photo = (l.photos && l.photos[0]) || "assets/img/listings/sample-1.svg";
@@ -28,11 +32,14 @@
           ${l.sample ? '<span class="sample-tag">Sample</span>' : ""}
         </div>
         <div class="card__body">
-          <div class="card__price">${price(l.price)}</div>
+          <div class="card__price">${rate(l)}</div>
           <div class="card__address">${esc(l.address)}</div>
           <div class="card__place">${esc(place(l))}</div>
           <div class="card__stats">
-            ${isLand(l) ? `
+            ${isLease(l) ? `
+            ${l.sqft ? `<span>${num(l.sqft)} Sq Ft</span>` : ""}
+            ${l.offices ? `<span>${num(l.offices)} Offices</span>` : ""}
+            ${l.zoning ? `<span>${esc(l.zoning)}</span>` : ""}` : isLand(l) ? `
             ${l.acres ? `<span>${num(l.acres)} Acres</span>` : ""}
             ${l.lotSqft ? `<span>${num(l.lotSqft)} Sq Ft Lot</span>` : ""}
             ${l.zoning ? `<span>${esc(l.zoning)}</span>` : ""}` : `
@@ -40,7 +47,7 @@
             ${l.baths ? `<span>${num(l.baths)} Baths</span>` : ""}
             ${l.sqft ? `<span>${num(l.sqft)} Sq Ft</span>` : ""}`}
           </div>
-          <div class="card__cta">${isLand(l) ? "View Lot" : "View Home"} <span aria-hidden="true">→</span></div>
+          <div class="card__cta">View ${kind(l)} <span aria-hidden="true">→</span></div>
         </div>
       </a>`;
   }
@@ -179,7 +186,7 @@
     }
   }
 
-  window.Site = { C, esc, price, num, place, fullAddress, statusSlug, loadListings, cardHTML, wireReveal, isLand };
+  window.Site = { C, esc, price, num, place, fullAddress, statusSlug, loadListings, cardHTML, wireReveal, isLand, isLease, rate, kind };
 
   document.addEventListener("DOMContentLoaded", () => { fillContact(); wireNav(); wireForms(); wireReveal(); });
   document.addEventListener("site:forms", () => { fillContact(); wireForms(); });
