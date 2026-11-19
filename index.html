@@ -294,7 +294,7 @@
   }
 
   // Featured first, then by status order, then price high to low
-  const order = { "Active": 0, "Coming Soon": 1, "Pending": 2 };
+  const order = { "Active": 0, "Coming Soon": 1, "Pending": 2, "For Lease": 3 };
   listings.sort((a, b) => (b.featured === true) - (a.featured === true) || (order[a.status] ?? 9) - (order[b.status] ?? 9) || (b.price || 0) - (a.price || 0));
 
   // Hero image from the first listing photo
@@ -311,7 +311,7 @@
   if (statuses.length > 2) {
     filters.innerHTML = statuses.map((s, i) => `<button class="filter" type="button" aria-pressed="${i === 0}">${s}</button>`).join("");
     filters.addEventListener("click", (e) => {
-      const b = e.target.closest(".filter"); if (!b) return;
+      const b = e.target.closest(".filter");  if (!b) return;
       filters.querySelectorAll(".filter").forEach((x) => x.setAttribute("aria-pressed", x === b));
       render(b.textContent);
     });
