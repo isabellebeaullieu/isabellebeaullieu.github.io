@@ -126,11 +126,14 @@
 
   const e = Site.esc, C = Site.C;
   const land = Site.isLand(l);
+  const lease = Site.isLease(l);
   const photos = (l.photos && l.photos.length) ? l.photos : ["assets/img/listings/sample-1.svg"];
-  document.title = `${l.address}, ${l.city} | ${Site.price(l.price)} | Isabelle Beaullieu`;
+  document.title = `${l.address}, ${l.city} | ${Site.rate(l)} | Isabelle Beaullieu`;
   const desc = document.querySelector('meta[name="description"]');
   document.querySelector('link[rel="canonical"]').href = "https://isabellebeaullieu.com/" + (l.slug ? l.slug + "/" : "listing.html?id=" + encodeURIComponent(l.id));
-  desc.content = land
+  desc.content = lease
+    ? `${l.headline || ""} ${Site.num(l.sqft) || ""} sq ft for lease at ${Site.fullAddress(l)}.`.trim()
+    : land
     ? `${l.headline || ""} ${l.acres || ""}-acre lot at ${Site.fullAddress(l)}.`.trim()
     : `${l.headline || ""} ${l.beds || ""} bed, ${l.baths || ""} bath home at ${Site.fullAddress(l)}.`.trim();
 
@@ -154,12 +157,16 @@
 
     <div class="detail">
       <article>
-        <p class="eyebrow">${e(l.status)}${land ? " · Land" : ""}${l.sample ? " · Sample Listing" : ""}</p>
-        <div class="detail__price">${Site.price(l.price)}</div>
+        <p class="eyebrow">${e(l.status)}${lease ? " · Commercial" : land ? " · Land" : ""}${l.sample ? " · Sample Listing" : ""}</p>
+        <div class="detail__price">${Site.price(l.price)}${lease && typeof l.price === "number" ? '<span class="detail__unit">/month</span>' : ""}</div>
         <p class="detail__address">${e(l.address)}</p>
         <p class="detail__place">${e([l.neighborhood, `${l.city}, ${l.state || "LA"} ${l.zip || ""}`].filter(Boolean).join(" · "))}</p>
 
-        <div class="stats${land ? " stats--land" : ""}">${land ? `
+        <div class="stats${land ? " stats--land" : ""}">${lease ? `
+          <div><strong>${Site.num(l.sqft) || "—"}</strong><span>Sq Ft</span></div>
+          <div><strong>${Site.num(l.offices) || "—"}</strong><span>Private Offices</span></div>
+          <div><strong>${Site.num(l.restrooms) || "—"}</strong><span>${l.restrooms === 1 ? "Restroom" : "Restrooms"}</span></div>
+          <div><strong>${l.zoning ? e(l.zoning) : "—"}</strong><span>Zoning</span></div>` : land ? `
           <div><strong>${Site.num(l.acres) || "—"}</strong><span>Acres</span></div>
           <div><strong>${Site.num(l.lotSqft) || "—"}</strong><span>Lot Sq Ft</span></div>
           <div><strong>${l.zoning ? e(l.zoning) : "—"}</strong><span>Zoning</span></div>` : `
@@ -177,7 +184,7 @@
 
       <aside class="inquiry" id="inquiry">
         <p class="eyebrow">Private Showing</p>
-        <h3>Interested in this ${land ? "lot" : "home"}?</h3>
+        <h3>Interested in this ${Site.kind(l).toLowerCase()}?</h3>
         <p style="margin:0;color:var(--stone);font-size:15px">Request a tour or ask a question. I'll reach out personally.</p>
         <form class="form" data-lead novalidate>
           <input type="hidden" name="property" value="${e(Site.fullAddress(l))}">
@@ -187,9 +194,9 @@
           <div class="field"><label for="i-name">Name</label><input id="i-name" name="name" required autocomplete="name"></div>
           <div class="field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" autocomplete="email"></div>
           <div class="field"><label for="i-phone">Phone</label><input id="i-phone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="field"><label for="i-pre">Pre-approved?</label>
+          ${lease ? "" : `<div class="field"><label for="i-pre">Pre-approved?</label>
             <select id="i-pre" name="preapproved"><option value="">Select</option><option>Yes</option><option>Not yet</option><option>Paying cash</option></select>
-          </div>
+          </div>`}
           <div class="field"><label for="i-msg">Message</label><textarea id="i-msg" name="message">I'd like to schedule a showing of ${e(l.address)}.</textarea></div>
           <button class="btn" type="submit">Request a Showing</button>
           <p class="form__consent">By submitting, you agree that Isabelle Beaullieu may contact you by phone, text, or email about your inquiry. Message and data rates may apply. Consent is not a condition of any purchase. See our <a href="privacy">Privacy Policy</a>.</p>
